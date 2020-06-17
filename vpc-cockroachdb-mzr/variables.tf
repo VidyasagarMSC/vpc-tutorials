@@ -7,8 +7,9 @@ variable "vpc_region" {
 }
 
 variable "vpc_ssh_keys" {
+  type        = list(string)
   description = "The names of SSH keys used to access virtual server instances after creation. They need to be commma separated and inside double quotes."
-  default     = []
+  default = [""]
 }
 
 variable "resource_group" {
@@ -66,7 +67,7 @@ variable "vpc_database_image_name" {
   default     = "ubuntu-18.04-amd64"
 }
 
-variable null {
+variable "null" {
   default = ""
 }
 
@@ -91,3 +92,4 @@ variable "vpc_zones" {
     us-south-availability-zone-3 = "us-south-3"
   }
 }
+

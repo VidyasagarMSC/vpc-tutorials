@@ -1,4 +1,4 @@
-# Private and public subnets in a Virtual Private Cloud
+# Public frontend and private backend in a Virtual Private Cloud
 
 The scripts in this directory can be used to deploy or clean up the resources for the [IBM Cloud solution tutorial](https://cloud.ibm.com/docs/tutorials?topic=solution-tutorials-vpc-public-app-private-backend#vpc-public-app-private-backend).
 
@@ -43,6 +43,7 @@ vi export; # make the changes suggested
 source export
 cd tf
 terraform init
+terraform plan
 terraform apply
 ```
 

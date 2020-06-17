@@ -1,12 +1,12 @@
-variable ibmcloud_api_key {
+variable "ibmcloud_api_key" {
   description = "The IBM Cloud platform API key. The key is required to provision the cloud and bastion virtual server instances in the IBM Virtual Private Cloud."
 }
 
-variable "softlayer_username" {
+variable "iaas_classic_username" {
   description = "The IBM Cloud infrastructure (SoftLayer) user name. Required to provision the onprem virtual server instance in the IBM Cloud Classic environment."
 }
 
-variable "softlayer_api_key" {
+variable "iaas_classic_api_key" {
   description = "The IBM Cloud infrastructure API key. Required to provision the onprem virtual server instance in the IBM Cloud Classic environment."
 }
 
@@ -16,7 +16,7 @@ variable "ibmcloud_timeout" {
 }
 
 # 1 vpc generation classic, 2 vpc
-variable generation {
+variable "generation" {
   default = "1"
 }
 
@@ -29,7 +29,7 @@ variable "ssh_key_name" {
 }
 
 variable "prefix" {
-  description = "resources created will be named: ${prefix}vpc-pubpriv, vpc name will be ${prefix} or will be defined by vpc_name"
+  description = "resources created will be named: $${prefix}vpc-pubpriv, vpc name will be $${prefix} or will be defined by vpc_name"
   default     = "vpns2s"
 }
 
@@ -86,3 +86,4 @@ variable "onprem_datacenter" {
 variable "onprem_ssh_key_name" {
   description = "SSH keys allow access to an instance without using a password, the tutorial requires one. Add one here: https://cloud.ibm.com/classic/devices/sshkeys."
 }
+
